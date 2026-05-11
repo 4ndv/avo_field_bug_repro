@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_27_052017) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_11_061538) do
   create_table "bugs", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.datetime "deadline"
+    t.text "description"
     t.integer "parent_id"
+    t.string "priority", default: "low", null: false
     t.string "title"
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_bugs_on_parent_id"
