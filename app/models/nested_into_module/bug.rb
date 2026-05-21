@@ -1,4 +1,5 @@
-class Bug < ApplicationRecord
+class NestedIntoModule::Bug < ApplicationRecord
+  self.table_name = "bugs"
   belongs_to :parent, class_name: "Bug", optional: true
 
   enum :priority, {
@@ -8,3 +9,4 @@ class Bug < ApplicationRecord
     severe: 'severe'
   }, validate: true, suffix: true
 end
+
