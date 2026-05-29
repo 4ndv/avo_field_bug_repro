@@ -1,4 +1,6 @@
 class Bug < ApplicationRecord
+  has_many_attached :files
+
   belongs_to :parent, class_name: "Bug", optional: true
 
   enum :priority, {
