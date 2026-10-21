@@ -17,5 +17,6 @@ class Avo::Resources::Bug < Avo::BaseResource
     field :description, as: :textarea
     field :priority, as: :select, options: Bug.priorities
     field :deadline, as: :date_time
+    field :comments, as: :has_many
   end
 end
